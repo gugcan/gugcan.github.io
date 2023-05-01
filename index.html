@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>可视化大屏</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<header>
+    <div class="title">
+        <h1>店铺可视化管理系统</h1>
+    </div>
+<!--    <div class="box"></div>-->
+
+    <div class="showTime">当前时间：2023/3/16 16:55:55</div>
+    <script>
+        let t = null;
+        t = setTimeout(time, 1000); //开始运行
+        function time() {
+            clearTimeout(t); //清除定时器
+            let dt = new Date();
+            let y = dt.getFullYear();
+            let mt = dt.getMonth() + 1;
+            let day = dt.getDate();
+            let h = dt.getHours(); //获取时
+            let m = dt.getMinutes(); //获取分
+            let s = dt.getSeconds(); //获取秒
+            document.querySelector(".showTime").innerHTML =
+                "当前时间：" + y + "/" + mt + "/" + day + " " + h + ":" + m + ":" + s ;
+            t = setTimeout(time, 1000); //设置定时器，循环运行
+        }
+    </script>
+</header>
+
+<body>
+    <selection class="mainbox">
+        <div class="column">
+            <div class="no">
+                <div class="no-hd">
+                    <ul>
+                        <li>25811</li>
+                        <li>104563</li>
+                    </ul>
+                </div>
+                <div class="no-bd">
+                    <ul>
+                        <li>消费人数</li>
+                        <li>营业额</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="map">
+                <div class="chart"></div>
+                <div class="map1"></div>
+                <div class="map2"></div>
+                <div class="map3"></div>
+                <div class="chart"></div>
+            </div>
+        </div>
+        </div>
+        <div class="column">
+            <div class="panel bar">
+                <h2>图表展示</h2>
+                <div class="chart">
+
+                </div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel line">
+                <h2>Show Time</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel pie">
+                <h2>来店性别占比</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="panel bar1">
+                <h2>地区销售额占比</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel line1">
+                <h2>Show Time</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+            <div class="panel pie1">
+                <h2>地区店铺占比</h2>
+                <div class="chart"></div>
+                <div class="panel-footer"></div>
+            </div>
+        </div>
+
+    </selection>
+
+    <script src="js/flexible.js"></script>
+    <script src="js/china.js"></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/index.js"></script>
+<!--    <script src="js/index1.js"></script>-->
+<!--    <script src="js/index2.js"></script>-->
+</body>
+</html>
